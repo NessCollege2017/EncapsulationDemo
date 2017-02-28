@@ -6,22 +6,22 @@ import edu.tomer.java.library.Book;
 import edu.tomer.java.library.Library;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Main {
 
     public static void main(String[] args) {
-        Point p1 = new Point(20, 20);
-        Point p2 = new Point(20, 40);
 
-        System.out.println(p1);
-        System.out.println(p2);
-
-        p2 = p1;
-        p2.x = 100;
-
-        System.out.println(p1);
-
+       Library lib = new Library();
+       lib.addBook(new Book("Java time" ,"dfsoi302-200-e3"));
+       lib.printBooks();
+        //pointer
+        //objects are passed by ref.
+        ArrayList<Book> books = lib.getBooks();
+        books.clear();
+        books.add(new Book("Your encapsulation has been hacked" ,"123"));
+        lib.printBooks();
     }
 
     //gets a reference
