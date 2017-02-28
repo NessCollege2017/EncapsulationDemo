@@ -5,33 +5,45 @@ import edu.tomer.java.library.Book;
 
 import edu.tomer.java.library.Library;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
-        Library lib = new Library();
 
-        //String uid = UUID.randomUUID().toString();
-        //System.out.println(uid);
-
-        //init 2 books:
-        Book b1 = new Book("Java Software solutions 8th edition", "212310-2392");
-        Book b2 = new Book("Java in a nutshell 6th edition", "4090923-023039");
-
-        //add the books to the library:
-        lib.addBook(b1);
-        lib.addBook(b2);
-
-        lib.printBooks();
+        //primitive: value types
+        //int, char, boolean, double, float
+        //passed via copy.
 
 
+        //Reference types: Object
+        //Capital letter - Classes only
+        //String...Person...Student...Trivia...Random ->new
+        //passed via reference. the receiver gets a reference. not a copy!
 
+        Book b = new Book("Intro to java", "2134-4324");
+        changeTheBook(b);
+    }
 
-        //secure the integrity
-        //
+    //gets a reference
+    //if
+    public static void changeTheBook(Book b){
+        b.setName("The Intro to java");
+    }
 
-        edu.tomer.java.ebooks.Book book = new edu.tomer.java.ebooks.Book();
+    //gets a copy
+    public static int changeIt(int x){
+        x = x+1;
+        return x;
+    }
+    private static void print(int[] arr) {
+        for (int item : arr) {
+            System.out.printf("%s ", item);
+        }
+        System.out.println();
+    }
 
-
+    public static void sort(int[] arr){
+        Arrays.sort(arr);
     }
 }
