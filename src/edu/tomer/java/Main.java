@@ -5,24 +5,23 @@ import edu.tomer.java.library.Book;
 
 import edu.tomer.java.library.Library;
 
+import java.awt.*;
 import java.util.Arrays;
 
 public class Main {
 
     public static void main(String[] args) {
+        Point p1 = new Point(20, 20);
+        Point p2 = new Point(20, 40);
 
-        //primitive: value types
-        //int, char, boolean, double, float
-        //passed via copy.
+        System.out.println(p1);
+        System.out.println(p2);
 
+        p2 = p1;
+        p2.x = 100;
 
-        //Reference types: Object
-        //Capital letter - Classes only
-        //String...Person...Student...Trivia...Random ->new
-        //passed via reference. the receiver gets a reference. not a copy!
+        System.out.println(p1);
 
-        Book b = new Book("Intro to java", "2134-4324");
-        changeTheBook(b);
     }
 
     //gets a reference
